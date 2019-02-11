@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let ClientSchema = new Schema({
+var ClientSchema = new Schema({
     name: {type: String, required: true, max: 50},
     age: {type: Number, required: true},
-    account: {type: String, required: true, max: 8},
+    account: {type: String,required: true, unique: true, index:true, max: 8, min: 8},
     address: {type: String, required: true, max: 100},
-    balance: {type: Number},
+    balance: {type: Number, default: 0}
 });
 
 

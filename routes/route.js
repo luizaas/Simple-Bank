@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-const client_controller = require('../controllers/client.controller');
+const client = require('../controllers/client.controller');
+const transaction = require('../controllers/transaction.controller');
 
-router.get('/', (req, res)=>{
+router.get('/cadastro', (req, res)=>{
     res.render("register")
 });
 
-router.post('/finalizacadastro', client_controller.client_create);
+router.post('/finalizacadastro', client.clientCreate);
+
+router.get('/listasaldo',client.showAllBalance);
+
+router.get('/transacoesdia/:date',transaction.showAllTransactionFromDate );
+
+router.get('/extrato/:client', transaction.showAllTransactionFromClient);
 
 module.exports = router;

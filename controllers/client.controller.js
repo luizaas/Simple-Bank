@@ -1,6 +1,6 @@
 const Client = require('../models/client.model');
 
-exports.client_create = function (req, res) {
+exports.clientCreate =  (req, res) => {
     let client = new Client(
         {
             name: req.body.name,
@@ -11,11 +11,24 @@ exports.client_create = function (req, res) {
         }
     );
 
-    client.save(function (err) {
-        if (err) {
-            console.log(err)
-             next(err);
-        }
-        res.send('Client Created successfully')
+    client.save()
+    .then(result => {
+        res.status(200).json(client);
     })
+    .catch(err => {
+        console.log(err);
+        res.send("Sorry occur an error try aggain later");
+    });
 };
+
+exports.showAllBalance = (req, res) => {
+    Client.find({},'name account balance')
+    .lean()
+    .exec((err, client) => {
+            if (err) {
+            return res.send(err);
+            }
+            res.send(client);
+        }    )
+    
+}
