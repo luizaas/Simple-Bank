@@ -13,14 +13,14 @@ const CreateClient = () => {
          </div>
 
          <div className='formInput'>
-	  <form method='POST' action='/finalizacadastro'>
-	     <input type='text' placeholder='Nome' name='name'/>
-         <input type='number' placeholder='Idade' name='age'/>
-         <input type='text' placeholder='Endereço' name='address'/>
-         <input type='text' placeholder='Conta' name='account'/>
-         <input type='number'  step="0.01" placeholder='Saldo' name='balance'/>
-	     <button>ENTER</button>
-	  </form>
+            <form method='POST' action='/finalizacadastro'>
+               <input type='text' placeholder='Nome' name='name' />
+               <input type='number' placeholder='Idade' name='age' />
+               <input type='text' placeholder='Endereço' name='address' />
+               <input type='text' placeholder='Conta' name='account' />
+               <input type='number' step="0.01" placeholder='Saldo' name='balance' />
+               <button>ENTER</button>
+            </form>
          </div>
       </div>
    )

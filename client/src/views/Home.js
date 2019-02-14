@@ -10,7 +10,7 @@ const Home = () => {
          </div>
 
          <div className="instructions">
-            <p>Choose one option</p>
+            <p>Escolha a operação que deseja realizar</p>
          </div>
          <div className="homeBtn">
             <Link to='/cadastro-cliente'><button>Cadastro Client</button></Link>
