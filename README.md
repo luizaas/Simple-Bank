@@ -2,7 +2,7 @@
 
 A web application that simulates a few operations on a bank daily basis.
 
-##Install
+## Install
 
 * Download the project
 * Run ``npm intall``
