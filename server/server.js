@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', route);
 
-let port = 3000;
+let port = 5000;
 
 app.listen(port, () => {
     console.log('Server is up and running on port ' + port);

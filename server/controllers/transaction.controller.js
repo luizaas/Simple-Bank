@@ -1,22 +1,23 @@
 const Transaction = require('../models/transaction.model');
 
 exports.showAllTransactionFromDate = (req, res) => {
-    Transaction.findAllTransactionsFromDate( req.params.date,(err, trans) => {
+    Transaction.findAllTransactionsFromDate(req.params.date, (err, trans) => {
         if (err) {
-          return res.send(err);
+            return res.send(err);
         }
-        res.json(trans);
+        res.json({ sucess: true, data: trans });
     });
 }
 
 exports.showAllTransactionFromClient = (req, res) => {
-    Transaction.findAllTransactionsFromClient(req.params.client, 
+    Transaction.findAllTransactionsFromClient(req.params.client,
         (err, trans) => {
             if (err) {
-            return res.send(err);
+                console.log(err);
+                return res.send(err);
             }
-            res.send(trans);
-        }    
+            res.json({ sucess: true, data: trans });
+        }
     )
 }
 

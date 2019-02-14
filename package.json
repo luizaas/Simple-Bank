@@ -1,29 +1,36 @@
 {
-  "name": "simple-bank",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luizaas/simple-bank.git"
-  },
-  "author": "Luiza",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/luizaas/simple-bank/issues"
-  },
-  "homepage": "https://github.com/luizaas/simple-bank#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "mongoose": "^5.4.11"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.10"
+    "name": "dev_app",
+    "version": "1.0.0",
+    "description": "A web application that simulates a few basic operations on a bank daily basis.",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "test-lint": "eslint --ignore-pattern \"build\" --ignore-path .gitignore .",
+      "server": "cd server && node server.js",
+      "client": " cd client && npm run start",
+      "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "concurrently": "^3.5.1",
+      "es6-promise": "^4.2.4",
+      "express": "^4.16.3",
+      "isomorphic-fetch": "^2.2.1",
+      "node-fetch": "^2.1.2",
+      "nodemon": "^1.17.4",
+      "react-router-dom": "^4.2.2",
+      "redux-saga": "^0.16.0"
+    },
+    "devDependencies": {
+      "babel-eslint": "^7.2.3",
+      "eslint": "^3.19.0",
+      "eslint-config-strongloop": "^2.1.0",
+      "eslint-plugin-react": "^7.8.2",
+      "module-alias": "2.0.6"
+    },
+    "_moduleAliases": {
+      "root": ".",
+      "routes": "./server/routes",
+      "server": "./server"
+    }
   }
-}
